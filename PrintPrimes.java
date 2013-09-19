@@ -1,17 +1,28 @@
 public class PrintPrimes {
-  static final int M = 300;
-  static final int RR = 50;
-  static final int CC = 4;
-  static final int WW = 10;
-  static final int ORDMAX = 30;
-  static int P[] = new int[M + 1];
+  int M;
+  int RR;
+  int CC;
+  int WW;
+  int ORDMAX;
+  int P[];
 
-  public static void main(String[] args) {
-      calculatePrimes();
-      printPrimes();
+  public PrintPrimes(int M, int RR, int CC, int WW, int ORDMAX) {
+    this.M   = M;
+    this.RR  = RR;
+    this.CC  = CC;
+    this.WW  = WW;
+    this.ORDMAX = ORDMAX;
+    this.P = new int[M + 1];
   }
 
-  public static void calculatePrimes() {
+
+  public static void main(String[] args) {
+      PrintPrimes printPrimes = new PrintPrimes(300, 50, 4, 10, 30);
+      printPrimes.calculatePrimes();
+      printPrimes.printPrimes();
+  }
+
+  public void calculatePrimes() {
       boolean JPRIME;
       int N;
       int MULT[] = new int[ORDMAX + 1];
@@ -45,7 +56,7 @@ public class PrintPrimes {
       }
     }
 
-    public static void printPrimes() {
+    public void printPrimes() {
         int PAGENUMBER = 1;
         int PAGEOFFSET = 1;
         while (PAGEOFFSET <= M) {
