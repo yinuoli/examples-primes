@@ -7,23 +7,15 @@ public class PrintPrimes {
 
   public static void main(String[] args) {
     int P[] = new int[M + 1];
-    int PAGENUMBER;
-    int PAGEOFFSET;
-    int ROWOFFSET;
-    int C;
-    int J;
-    int K;
     boolean JPRIME;
-    int ORD;
-    int SQUARE;
     int N;
     int MULT[] = new int[ORDMAX + 1];
 
-    J = 1;
-    K = 1;
+    int J = 1;
+    int K = 1;
     P[1] = 2;
-    ORD = 2;
-    SQUARE = 9;
+    int ORD = 2;
+    int SQUARE = 9;
 
     while (K < M) {
       do {
@@ -47,14 +39,14 @@ public class PrintPrimes {
       P[K] = J;
     }
     {
-      PAGENUMBER = 1;
-      PAGEOFFSET = 1;
+      int PAGENUMBER = 1;
+      int PAGEOFFSET = 1;
       while (PAGEOFFSET <= M) {
         System.out.println("The First " + M +
                              " Prime Numbers --- Page " + PAGENUMBER);
         System.out.println("");
-        for (ROWOFFSET = PAGEOFFSET; ROWOFFSET < PAGEOFFSET + RR; ROWOFFSET++){
-          for (C = 0; C < CC;C++)
+        for (int ROWOFFSET = PAGEOFFSET; ROWOFFSET < PAGEOFFSET + RR; ROWOFFSET++){
+          for (int C = 0; C < CC;C++)
             if (ROWOFFSET + C * RR <= M)
               System.out.format("%10d", P[ROWOFFSET + C * RR]);
           System.out.println("");
