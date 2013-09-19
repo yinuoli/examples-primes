@@ -28,12 +28,11 @@ public class PrintPrimes {
       int MULT[] = new int[ORDMAX + 1];
 
       int J = 1;
-      int primesFoundSoFar = 1;
       listOfPrimes[1] = 2;
       int ORD = 2;
       int SQUARE = 9;
 
-      while (primesFoundSoFar < numberOfPrimes) {
+      for(int primesFoundSoFar = 1; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
         do {
           J = J + 2;
           if (J == SQUARE) {
@@ -51,7 +50,6 @@ public class PrintPrimes {
             N = N + 1;
           }
         } while (!JPRIME);
-        primesFoundSoFar = primesFoundSoFar + 1;
         listOfPrimes[primesFoundSoFar] = J;
       }
     }
