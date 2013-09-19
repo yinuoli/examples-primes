@@ -23,12 +23,21 @@ public class PrintPrimes {
   }
 
   public void calculatePrimes() {
+      /* Two is the only even prime. All other prime numbers are odd.
+       * To simplify the code, we simply add 2 as a prime number, and
+       * delegate the task of finding all odd prime numbers to a helper
+       * function.
+       */
+      listOfPrimes[1] = 2;
+      calculateOddPrimes();
+  }
+
+  private void calculateOddPrimes() {
       boolean JPRIME;
       int N;
       int MULT[] = new int[ORDMAX + 1];
 
       int J = 1;
-      listOfPrimes[1] = 2;
       int ORD = 2;
       int SQUARE = 9;
 
