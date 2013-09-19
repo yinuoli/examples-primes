@@ -4,9 +4,9 @@ public class PrintPrimes {
   static final int CC = 4;
   static final int WW = 10;
   static final int ORDMAX = 30;
+  static int P[] = new int[M + 1];
 
   public static void main(String[] args) {
-    int P[] = new int[M + 1];
     boolean JPRIME;
     int N;
     int MULT[] = new int[ORDMAX + 1];
