@@ -1,18 +1,18 @@
 public class PrintPrimes {
-  int M;
+  int numberOfPrimes;
   int RR;
   int CC;
   int WW;
   int ORDMAX;
   int listOfPrimes[];
 
-  public PrintPrimes(int M, int RR, int CC, int WW, int ORDMAX) {
-    this.M   = M;
+  public PrintPrimes(int numberOfPrimes, int RR, int CC, int WW, int ORDMAX) {
+    this.numberOfPrimes   = numberOfPrimes;
     this.RR  = RR;
     this.CC  = CC;
     this.WW  = WW;
     this.ORDMAX = ORDMAX;
-    this.listOfPrimes = new int[M + 1];
+    this.listOfPrimes = new int[numberOfPrimes + 1];
   }
 
 
@@ -33,7 +33,7 @@ public class PrintPrimes {
       int ORD = 2;
       int SQUARE = 9;
 
-      while (K < M) {
+      while (K < numberOfPrimes) {
         do {
           J = J + 2;
           if (J == SQUARE) {
@@ -59,13 +59,13 @@ public class PrintPrimes {
     public void printPrimes() {
         int PAGENUMBER = 1;
         int PAGEOFFSET = 1;
-        while (PAGEOFFSET <= M) {
-          System.out.println("The First " + M +
+        while (PAGEOFFSET <= numberOfPrimes) {
+          System.out.println("The First " + numberOfPrimes +
                                " Prime Numbers --- Page " + PAGENUMBER);
           System.out.println("");
           for (int ROWOFFSET = PAGEOFFSET; ROWOFFSET < PAGEOFFSET + RR; ROWOFFSET++){
             for (int C = 0; C < CC;C++)
-              if (ROWOFFSET + C * RR <= M)
+              if (ROWOFFSET + C * RR <= numberOfPrimes)
                 System.out.format("%10d", listOfPrimes[ROWOFFSET + C * RR]);
             System.out.println("");
           }
