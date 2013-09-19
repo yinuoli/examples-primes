@@ -1,10 +1,11 @@
 public class PrintPrimes {
+  static final int M = 300;
+  static final int RR = 50;
+  static final int CC = 4;
+  static final int WW = 10;
+  static final int ORDMAX = 30;
+
   public static void main(String[] args) {
-    final int M = 300;
-    final int RR = 50;
-    final int CC = 4;
-    final int WW = 10;
-    final int ORDMAX = 30;
     int P[] = new int[M + 1];
     int PAGENUMBER;
     int PAGEOFFSET;
