@@ -4,7 +4,7 @@ public class PrintPrimes {
   int CC;
   int WW;
   int ORDMAX;
-  int P[];
+  int listOfPrimes[];
 
   public PrintPrimes(int M, int RR, int CC, int WW, int ORDMAX) {
     this.M   = M;
@@ -12,7 +12,7 @@ public class PrintPrimes {
     this.CC  = CC;
     this.WW  = WW;
     this.ORDMAX = ORDMAX;
-    this.P = new int[M + 1];
+    this.listOfPrimes = new int[M + 1];
   }
 
 
@@ -29,7 +29,7 @@ public class PrintPrimes {
 
       int J = 1;
       int K = 1;
-      P[1] = 2;
+      listOfPrimes[1] = 2;
       int ORD = 2;
       int SQUARE = 9;
 
@@ -38,21 +38,21 @@ public class PrintPrimes {
           J = J + 2;
           if (J == SQUARE) {
             ORD = ORD + 1;
-            SQUARE = P[ORD] * P[ORD];
+            SQUARE = listOfPrimes[ORD] * listOfPrimes[ORD];
             MULT[ORD - 1] = J;
           }
           N = 2;
           JPRIME = true;
           while (N < ORD && JPRIME) {
             while (MULT[N] < J)
-              MULT[N] = MULT[N] + P[N] + P[N];
+              MULT[N] = MULT[N] + listOfPrimes[N] + listOfPrimes[N];
             if (MULT[N] == J)
               JPRIME = false;
             N = N + 1;
           }
         } while (!JPRIME);
         K = K + 1;
-        P[K] = J;
+        listOfPrimes[K] = J;
       }
     }
 
@@ -66,7 +66,7 @@ public class PrintPrimes {
           for (int ROWOFFSET = PAGEOFFSET; ROWOFFSET < PAGEOFFSET + RR; ROWOFFSET++){
             for (int C = 0; C < CC;C++)
               if (ROWOFFSET + C * RR <= M)
-                System.out.format("%10d", P[ROWOFFSET + C * RR]);
+                System.out.format("%10d", listOfPrimes[ROWOFFSET + C * RR]);
             System.out.println("");
           }
           System.out.println("\f");
