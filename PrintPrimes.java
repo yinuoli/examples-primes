@@ -9,7 +9,6 @@ public class PrintPrimes {
     this.numberOfPrimes   = numberOfPrimes;
     this.RR  = RR;
     this.CC  = CC;
-    this.WW  = WW;
     this.ORDMAX = ORDMAX;
     this.listOfPrimes = new int[numberOfPrimes + 1];
   }
