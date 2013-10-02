@@ -68,15 +68,26 @@ public class PrintPrimes {
           System.out.println("The First " + numberOfPrimes +
                                " Prime Numbers --- Page " + PAGENUMBER);
           System.out.println("");
+          
+          printRow(PAGEOFFSET, rowsPerPage, columnsPerPage);
+          System.out.println("\f")
+          PAGENUMBER = PAGENUMBER +1;
+          
+          PAGEOFFSET=PAGEOFFSET+rowsPerPage * numberOfColumns;
+          
+        }
+    }
+    
+    public void printRow(int PAGEOFFSET, int rowsPerPage, int columnsPerPage){
+    	
           for (int ROWOFFSET = PAGEOFFSET; ROWOFFSET < PAGEOFFSET + RR; ROWOFFSET++){
+           
             for (int C = 0; C < CC;C++)
               if (ROWOFFSET + C * RR <= numberOfPrimes)
                 System.out.format("%10d", listOfPrimes[ROWOFFSET + C * RR]);
             System.out.println("");
           }
-          System.out.println("\f");
-          PAGENUMBER = PAGENUMBER + 1;
-          PAGEOFFSET = PAGEOFFSET + RR * CC;
+         
         }
     }
 }
