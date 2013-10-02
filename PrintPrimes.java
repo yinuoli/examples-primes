@@ -40,7 +40,10 @@ public class PrintPrimes {
       int SQUARE = 9;
 
       for(int primesFoundSoFar = 2; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
-        do {
+       JPRIME=true;
+       listOfPrime[primesFoundSoFar] = J = partial(J,JPRIME);
+      }
+  }
         
         
   private int partialCalculation(int J, boolean JPPRIME){
@@ -53,7 +56,7 @@ public class PrintPrimes {
             MULT[ORD - 1] = J;
           }
           
-          N = 2;
+          int N = 2;
           JPRIME = true;
           while (N < ORD && JPRIME) {
             while (MULT[N] < J)
@@ -63,9 +66,8 @@ public class PrintPrimes {
             N = N + 1;
           }
         } while (!JPRIME);
-        listOfPrimes[primesFoundSoFar] = J;
+        return J;
       }
-    }
 
    
     public void printPrimes() {
