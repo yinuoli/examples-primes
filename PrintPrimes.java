@@ -2,7 +2,6 @@ public class PrintPrimes {
   int numberOfPrimes;
   int RR;
   int CC;
-  int WW;
   int ORDMAX;
   int listOfPrimes[];
 
