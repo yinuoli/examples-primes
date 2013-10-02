@@ -39,14 +39,20 @@ public class PrintPrimes {
       int ORD = 2;
       int SQUARE = 9;
 
-      for(int primesFoundSoFar = 1; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
+      for(int primesFoundSoFar = 2; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
         do {
+        
+        
+  private int partialCalculation(int J, boolean JPPRIME){
+  	do{
+  
           J = J + 2;
           if (J == SQUARE) {
             ORD = ORD + 1;
             SQUARE = listOfPrimes[ORD] * listOfPrimes[ORD];
             MULT[ORD - 1] = J;
           }
+          
           N = 2;
           JPRIME = true;
           while (N < ORD && JPRIME) {
@@ -61,6 +67,7 @@ public class PrintPrimes {
       }
     }
 
+   
     public void printPrimes() {
         int PAGENUMBER = 1;
         int PAGEOFFSET = 1;
