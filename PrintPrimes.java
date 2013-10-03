@@ -39,7 +39,7 @@ public class PrintPrimes {
 
   private void calculateOddPrimes() {
       boolean notPrime;
-      int N;
+      int i;
       int currentValue = 1;
      
 
@@ -49,55 +49,54 @@ public class PrintPrimes {
       }
   }
         
-        
-  private int partialCalculation(int J, boolean JPPRIME){
+  private int partialCalculation(int currentValue, boolean notPrime){
   	do{
-  
-          J = J + 2;
-          if (J == SQUARE) {
-            ORD = ORD + 1;
-            SQUARE = listOfPrimes[ORD] * listOfPrimes[ORD];
-            MULT[ORD - 1] = J;
+          currentValue = currentValue + 2;
+          
+          if (currentValue == squareOfPrime) {
+            ord = ord + 1;
+            squareOfPrime = listOfPrimes[ord] * listOfPrimes[ord];
+            multiple[ord - 1] = currentValue;
           }
           
-          int N = 2;
-          JPRIME = true;
-          while (N < ORD && JPRIME) {
-            while (MULT[N] < J)
-              MULT[N] = MULT[N] + listOfPrimes[N] + listOfPrimes[N];
-            if (MULT[N] == J)
-              JPRIME = false;
-            N = N + 1;
+          int i = 2;//i is a counter
+          notPrime = true;
+          while (i < ord && notPrime) {
+            while (multiple[i] < currentValue)
+              multiple[i] = multiple[i] + listOfPrimes[i] + listOfPrimes[i];
+            if (multiple[i] == currentValue)
+              notPrime = false;
+            i = i + 1;
           }
-        } while (!JPRIME);
-        return J;
+        } while (!notPrime);
+        return currentValue;
       }
 
    
     public void printPrimes() {
-        int PAGENUMBER = 1;
-        int PAGEOFFSET = 1;
-        while (PAGEOFFSET <= numberOfPrimes) {
+        int pageNumber = 1;
+        int pageOffset = 1;
+        while (pageOffset <= numberOfPrimes) {
           System.out.println("The First " + numberOfPrimes +
-                               " Prime Numbers --- Page " + PAGENUMBER);
+                               " Prime Numbers --- Page " + pageNumber);
           System.out.println("");
           
-          printRow(PAGEOFFSET, rowsPerPage, columnsPerPage);
+          printRow(pageOffset, rowsPerPage, columnsPerPage);
           System.out.println("\f")
-          PAGENUMBER = PAGENUMBER +1;
+          pageNumber = pageNumber +1;
           
-          PAGEOFFSET=PAGEOFFSET+rowsPerPage * numberOfColumns;
+          pageOffset=pageOffset+rowsPerPage * numberOfColumns;
           
         }
     }
     
-    public void printRow(int PAGEOFFSET, int rowsPerPage, int columnsPerPage){
+    public void printRow(int pageOffset, int rowsPerPage, int columnsPerPage){
     	
-          for (int ROWOFFSET = PAGEOFFSET; ROWOFFSET < PAGEOFFSET + RR; ROWOFFSET++){
+          for (int rowOffset = pageOffset; rowOffset < pageOffset + rowsPerPage; rowOffset++){
            
-            for (int C = 0; C < CC;C++)
-              if (ROWOFFSET + C * RR <= numberOfPrimes)
-                System.out.format("%10d", listOfPrimes[ROWOFFSET + C * RR]);
+            for (int counter = 0; counter < columnPerPage ;counter++)
+              if (rowOffset + counter * rowPerPage <= numberOfPrimes)
+                System.out.format("%10d", listOfPrimes[rowOffSet + counter * rowPerPage]);
             System.out.println("");
           }
          
