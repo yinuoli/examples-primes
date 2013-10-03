@@ -4,8 +4,8 @@ public class PrintPrimes {
   int columnsPerPage;
   int ordMax;
   int listOfPrimes[];
-  int multple[];
-  int ord;
+  int multiple[];
+  int squareOfReference;//square of reference
   int squareOfPrime;
 
   public PrintPrimes(int numberOfPrimes, int RR, int CC, int ORDMAX) {
@@ -15,7 +15,7 @@ public class PrintPrimes {
     this.ordMax = ordMax;
     this.listOfPrimes = new int[numberOfPrimes + 1];
     this.multiple = new int[ordMax+1];
-    this.ord=2;
+    this.squareOfReference=2;
     this.squareOfPrime=9;
     
   }
@@ -45,16 +45,20 @@ public class PrintPrimes {
 
       for(int primesFoundSoFar = 2; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
        notPrime=true;
-       listOfPrime[primesFoundSoFar] = currentValue = partial(currentValue,notPrime);
+       listOfPrimes[primesFoundSoFar] = currentValue = partial(currentValue,notPrime);
       }
   }
+  
+  private int partial (int currentValue, boolean notPrime){
+  	return 0;
+  }
         
-  private int partialCalculation(int currentValue, boolean notPrime){
+  public int partialCalculation(int currentValue, boolean notPrime){
   	do{
           currentValue = currentValue + 2;
           
           if (currentValue == squareOfPrime) {
-            ord = ord + 1;
+            squareOfReference = squareOfReference + 1;
             squareOfPrime = listOfPrimes[ord] * listOfPrimes[ord];
             multiple[ord - 1] = currentValue;
           }
@@ -82,10 +86,10 @@ public class PrintPrimes {
           System.out.println("");
           
           printRow(pageOffset, rowsPerPage, columnsPerPage);
-          System.out.println("\f")
+          System.out.println("\f");
           pageNumber = pageNumber +1;
           
-          pageOffset=pageOffset+rowsPerPage * numberOfColumns;
+          pageOffset=pageOffset+rowsPerPage * columsPerPage;
           
         }
     }
@@ -94,14 +98,13 @@ public class PrintPrimes {
     	
           for (int rowOffset = pageOffset; rowOffset < pageOffset + rowsPerPage; rowOffset++){
            
-            for (int counter = 0; counter < columnPerPage ;counter++)
-              if (rowOffset + counter * rowPerPage <= numberOfPrimes)
-                System.out.format("%10d", listOfPrimes[rowOffSet + counter * rowPerPage]);
+            for (int counter = 0; counter < columnsPerPage ;counter++)
+              if (rowOffset + counter * rowsPerPage <= numberOfPrimes)
+                System.out.format("%10d", listOfPrimes[rowOffset + counter * rowsPerPage]);
             System.out.println("");
           }
-         
         }
     }
-}
+
 
 					 
