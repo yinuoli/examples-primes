@@ -38,17 +38,14 @@ public class PrintPrimes {
   }
 
   private void calculateOddPrimes() {
-      boolean JPRIME;
+      boolean notPrime;
       int N;
-      int MULT[] = new int[ORDMAX + 1];
-
-      int J = 1;
-      int ORD = 2;
-      int SQUARE = 9;
+      int currentValue = 1;
+     
 
       for(int primesFoundSoFar = 2; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
-       JPRIME=true;
-       listOfPrime[primesFoundSoFar] = J = partial(J,JPRIME);
+       notPrime=true;
+       listOfPrime[primesFoundSoFar] = currentValue = partial(currentValue,notPrime);
       }
   }
         
