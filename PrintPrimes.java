@@ -4,18 +4,25 @@ public class PrintPrimes {
   int columnsPerPage;
   int ordMax;
   int listOfPrimes[];
+  int multple[];
+  int ord;
+  int squareOfPrime;
 
-  public PrintPrimes(int numberOfPrimes, int RR, int CC, int WW, int ORDMAX) {
+  public PrintPrimes(int numberOfPrimes, int RR, int CC, int ORDMAX) {
     this.numberOfPrimes   = numberOfPrimes;
     this.rowsPerPage  = RR;
     this.columnsPerPage  = CC;
     this.ordMax = ordMax;
     this.listOfPrimes = new int[numberOfPrimes + 1];
+    this.multiple = new int[ordMax+1];
+    this.ord=2;
+    this.squareOfPrime=9;
+    
   }
 
 
   public static void main(String[] args) {
-      PrintPrimes printPrimes = new PrintPrimes(300, 50, 4, 10, 30);
+      PrintPrimes printPrimes = new PrintPrimes(300, 50, 4, 30);
       printPrimes.calculatePrimes();
       printPrimes.printPrimes();
   }
