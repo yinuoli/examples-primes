@@ -81,7 +81,7 @@ public class PrintPrimes {
                                " Prime Numbers --- Page " + pageNumber);
           System.out.println("");
           
-          printRow(pageOffset, rowsPerPage, columnsPerPage);
+          printTable(pageOffset, rowsPerPage, columnsPerPage);
           System.out.println("\f");
           pageNumber = pageNumber +1;
           
@@ -90,7 +90,7 @@ public class PrintPrimes {
         }
     }
     
-    public void printRow(int pageOffset, int rowsPerPage, int columnsPerPage){
+    public void printTable(int pageOffset, int rowsPerPage, int columnsPerPage){
     	
           for (int rowOffset = pageOffset; rowOffset < pageOffset + rowsPerPage; rowOffset++){
            
