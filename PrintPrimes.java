@@ -39,7 +39,7 @@ public class PrintPrimes {
 
   private void calculateOddPrimes() {
       boolean notPrime;
-      int i;
+   
       int currentValue = 1;
      
 
@@ -47,10 +47,6 @@ public class PrintPrimes {
        notPrime=true;
        listOfPrimes[primesFoundSoFar] = currentValue = partial(currentValue,notPrime);
       }
-  }
-  
-  private int partial (int currentValue, boolean notPrime){
-  	return 0;
   }
         
   public int partialCalculation(int currentValue, boolean notPrime){
