@@ -55,13 +55,13 @@ public class PrintPrimes {
           
           if (currentValue == squareOfPrime) {
             squareOfReference = squareOfReference + 1;
-            squareOfPrime = listOfPrimes[ord] * listOfPrimes[ord];
-            multiple[ord - 1] = currentValue;
+            squareOfPrime = listOfPrimes[squareOfReference] * listOfPrimes[squareOfReference];
+            multiple[squareOfReference - 1] = currentValue;
           }
           
           int i = 2;//i is a counter
           notPrime = true;
-          while (i < ord && notPrime) {
+          while (i < squareOfReference && notPrime) {
             while (multiple[i] < currentValue)
               multiple[i] = multiple[i] + listOfPrimes[i] + listOfPrimes[i];
             if (multiple[i] == currentValue)
@@ -85,7 +85,7 @@ public class PrintPrimes {
           System.out.println("\f");
           pageNumber = pageNumber +1;
           
-          pageOffset=pageOffset+rowsPerPage * columsPerPage;
+          pageOffset=pageOffset+rowsPerPage * columnsPerPage;
           
         }
     }
