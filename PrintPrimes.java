@@ -8,7 +8,7 @@ public class PrintPrimes {
   int squareOfReference;//square of reference
   int squareOfPrime;
 
-  public PrintPrimes(int numberOfPrimes, int RR, int CC, int ORDMAX) {
+  public PrintPrimes(int numberOfPrimes, int RR, int CC, int ordMax) {
     this.numberOfPrimes   = numberOfPrimes;
     this.rowsPerPage  = RR;
     this.columnsPerPage  = CC;
@@ -45,7 +45,7 @@ public class PrintPrimes {
 
       for(int primesFoundSoFar = 2; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
        notPrime=true;
-       listOfPrimes[primesFoundSoFar] = currentValue = partial(currentValue,notPrime);
+       listOfPrimes[primesFoundSoFar] = currentValue = partialCalculation(currentValue,notPrime);
       }
   }
         
